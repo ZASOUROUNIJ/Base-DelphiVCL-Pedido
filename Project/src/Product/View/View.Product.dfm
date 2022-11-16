@@ -10,8 +10,6 @@ object FormProduct: TFormProduct
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
-  PixelsPerInch = 96
   TextHeight = 13
   object pnlBackground: TPanel
     Left = 0
@@ -20,10 +18,6 @@ object FormProduct: TFormProduct
     Height = 299
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 160
-    ExplicitTop = 88
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object edtID: TEdit
       Left = 0
       Top = 16

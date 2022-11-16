@@ -12,6 +12,7 @@ type
     btnProduct: TButton;
     btnCustomer: TButton;
     btnPurchaseOrder: TButton;
+    procedure btnProductClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -23,6 +24,17 @@ var
 
 implementation
 
+uses
+  View.Product;
+
 {$R *.dfm}
+
+procedure TFormMain.btnProductClick(Sender: TObject);
+begin
+  formproduct := TFormProduct.Create(self);
+  formproduct.ShowModal;
+  formproduct.Free;
+  
+end;
 
 end.

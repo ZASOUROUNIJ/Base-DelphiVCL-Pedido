@@ -4,7 +4,7 @@ interface
 
 uses
   Model.Product.DAO.Interfaces,
-  Model.Product;
+  Model.Product, Model.Product.Interfaces;
 
 type
   TModelProductDAO = class (TInterfacedObject, iModelProductDAOInterfaces)
@@ -13,7 +13,7 @@ type
     constructor Create;
     destructor Destroy; override;
     class function New : iModelProductDAOInterfaces;
-    procedure Add (aValue : TProduct);
+    procedure Add (aValue : iModelProductInterfaces);
   end;
 
 implementation
@@ -23,7 +23,7 @@ uses
 
 { TModelProductDAO }
 
-procedure TModelProductDAO.Add(aValue: TProduct);
+procedure TModelProductDAO.Add(aValue: iModelProductInterfaces);
 begin
   showmessage ('teste parametros Tproduct'+sLineBreak+
   aValue.Description+ sLineBreak+

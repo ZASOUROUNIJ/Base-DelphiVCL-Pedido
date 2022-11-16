@@ -43,7 +43,7 @@ end;
 
 function TProduct.Description: string;
 begin
-  Result :=FDescription;
+  Result := FDescription;
 end;
 
 destructor TProduct.Destroy;
@@ -71,6 +71,7 @@ end;
 function TProduct.SellPrice(Avalue: Float32): iModelProductInterfaces;
 begin
   Result := Self;
+  FSellPrice := Avalue;
 end;
 
 function TProduct.SellPrice: float32;

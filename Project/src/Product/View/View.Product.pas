@@ -37,7 +37,10 @@ uses
 procedure TFormProduct.btnAddClick(Sender: TObject);
 begin
   TControllerProduct.New
-  .Add( edtDescription.Text, StrToFloat( edtSellPrice.Text) );
+  .Add( 
+    edtDescription.Text,
+    StrToFloat( edtSellPrice.Text) 
+   );
 end;
 
 end.

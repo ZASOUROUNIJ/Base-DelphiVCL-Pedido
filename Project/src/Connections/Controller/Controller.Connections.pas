@@ -10,7 +10,7 @@ type
     private
     public
     constructor Create;
-    destructor Destroy; overload;
+    destructor Destroy; override;
     class function New : iControllerConnectionsInterfaces;
     function connection : iControllerConnectionsInterfaces;
   end;

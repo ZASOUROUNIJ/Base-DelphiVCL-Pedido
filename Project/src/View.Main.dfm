@@ -10,8 +10,6 @@ object FormMain: TFormMain
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
-  PixelsPerInch = 96
   TextHeight = 13
   object pnlBackGround: TPanel
     Left = 0
@@ -22,10 +20,6 @@ object FormMain: TFormMain
     Color = clPurple
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 152
-    ExplicitTop = 96
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object btnProduct: TButton
       Left = 56
       Top = 24
@@ -33,6 +27,7 @@ object FormMain: TFormMain
       Height = 49
       Caption = 'Produtos'
       TabOrder = 0
+      OnClick = btnProductClick
     end
     object btnCustomer: TButton
       Left = 256

@@ -3,12 +3,13 @@ unit Controller.Product;
 interface
 
 uses
-  Controller.Product.Interfaces, Model.Product, Model.Product.DAO;
+  Controller.Product.Interfaces, Model.Product, Model.Product.DAO, 
+  Model.Product.DAO.Interfaces;
 
 type
   TControllerProduct = class (TinterfacedObject, iControllerProductInterfaces)
     private
-      FProductDAO : TModelProductDAO;
+      FProductDAO : iModelProductDAOInterfaces;
     public
       constructor Create;
       destructor Destroy; override;
@@ -19,30 +20,28 @@ type
 
 implementation
 
+uses
+  Model.Product.Interfaces;
+
 { TControllerProduct }
 
 
 function TControllerProduct.Add(aStrValue: string;
   aFloatValue: Float32): iControllerProductInterfaces;
 var
-  LProduct : Tproduct;
+  LProduct : iModelProductInterfaces;
 begin
-  try  // fazer funcionar
-    LProduct.Create;
-    LProduct.Description(aStrValue);
-    LProduct.SellPrice(aFloatValue);
-
-    FProductDAO.Add(LProduct);
-  finally
-    LProduct.Free;
-  end;
-
   Result := Self;
+  LProduct := TProduct.New;  
+  LProduct.Description(aStrValue);
+  LProduct.SellPrice(aFloatValue);
+  FProductDAO.Add(LProduct);
+
 end;
 
 constructor TControllerProduct.Create;
 begin
-
+  FProductDAO := TModelProductDAO.New;
 end;
 
 destructor TControllerProduct.Destroy;

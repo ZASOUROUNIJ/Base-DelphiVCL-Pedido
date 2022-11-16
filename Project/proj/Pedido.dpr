@@ -15,14 +15,17 @@ uses
   Model.Product.DAO in '..\src\Product\Model\Model.Product.DAO.pas',
   Model.Product.DAO.Interfaces in '..\src\Product\Model\Model.Product.DAO.Interfaces.pas',
   Controller.Connections in '..\src\Connections\Controller\Controller.Connections.pas',
-  Controller.Connections.Interfaces in '..\src\Connections\Controller\Controller.Connections.Interfaces.pas';
+  Controller.Connections.Interfaces in '..\src\Connections\Controller\Controller.Connections.Interfaces.pas',
+  MainDataModule in '..\src\Connection\MainDataModule.pas' {DataModuleCentral: TDataModule};
 
 {$R *.res}
 
 begin
+  ReportMemoryLeaksOnShutdown := true;
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TFormMain, FormMain);
   Application.CreateForm(TFormProduct, FormProduct);
+  Application.CreateForm(TDataModuleCentral, DataModuleCentral);
   Application.Run;
 end.
