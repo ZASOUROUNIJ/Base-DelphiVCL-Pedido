@@ -34,7 +34,6 @@ begin
   formproduct := TFormProduct.Create(self);
   formproduct.ShowModal;
   formproduct.Free;
-  
 end;
 
 end.

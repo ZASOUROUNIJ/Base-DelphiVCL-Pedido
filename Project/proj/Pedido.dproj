@@ -123,6 +123,8 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
+        <DCCReference Include="..\src\Connection\uConexao.pas"/>
+        <DCCReference Include="..\src\Connection\Controller\ControllerConexao.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
